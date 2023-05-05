@@ -12,11 +12,11 @@
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="/" class="active">Home</a></li>
-          <li><a href="{{route('about')}}">About</a></li>
-          <li><a href="{{route('services')}}">Services</a></li>
-          <li><a href="{{route('projects')}}">Projects</a></li>
-          <li><a href="{{route('blog')}}">Blog</a></li>
+          <li><a href="/" class="{{request()->is('/') ?  'active':''}}">Home</a></li>
+          <li><a href="{{route('about')}}" class="{{request()->is('about') ?  'active':''}}">About</a></li>
+          <li><a href="{{route('services')}}" class="{{request()->is('services') ?  'active':''}}">Services</a></li>
+          <li><a href="{{route('projects')}}" class="{{request()->is('projects') ?  'active':''}}">Projects</a></li>
+          <li><a href="{{route('blog')}}" class="{{request()->is('blog') ?  'active':''}}">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                 class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
@@ -36,7 +36,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="{{route('contact')}}">Contact</a></li>
+          <li><a href="{{route('contact')}}" class="{{request()->is('contact') ?  'active':''}}">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 
