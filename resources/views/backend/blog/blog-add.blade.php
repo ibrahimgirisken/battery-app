@@ -103,7 +103,7 @@
 </div>
 @endsection
 
-@section('js')
+@section("js")
 <script src="/backend/plugins/select2/js/select2.full.min.js"></script>
 <script src="/backend/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
 <script src="/backend/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
@@ -147,7 +147,8 @@
 </script>
 @endsection
 
-@section('css')
+@section("css")
+<script src="/backend/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <link rel="stylesheet" href="/backend/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 <link rel="stylesheet" href="/backend/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 @endsection

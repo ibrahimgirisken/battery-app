@@ -6,10 +6,10 @@
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('/frontend/assets/img/breadcrumbs-bg.jpg');">
       <div class="container position-relative d-flex flex-column align-items-center aos-init aos-animate" data-aos="fade">
 
-        <h2>Services</h2>
+        <h2>@lang('main-page.services')</h2>
         <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Services</li>
+          <li><a href="/">@lang('main-page.home')</a></li>
+          <li>@lang('main-page.services')</li>
         </ol>
 
       </div>

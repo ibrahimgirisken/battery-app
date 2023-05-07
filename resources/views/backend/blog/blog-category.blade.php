@@ -53,9 +53,9 @@
 </div>
 @endsection
 
-@section('js')
+@section("js")
 @endsection
 
-@section('css')
+@section("css")
 
 @endsection

@@ -52,7 +52,7 @@
     </section>
 </div>
 @endsection
-@section('js')
+@section("js")
 <script src="/backend/plugins/datatables/jquery.dataTables.js"></script>
 <script src="/backend/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
 <script>
@@ -70,6 +70,6 @@
 </script>
 @endsection
 
-@section('css')
+@section("css")
 
 @endsection

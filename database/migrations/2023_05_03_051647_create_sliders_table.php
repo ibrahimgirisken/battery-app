@@ -25,10 +25,11 @@ class CreateSlidersTable extends Migration
     public function up()
     {
         Schema::create('sliders', static function (Blueprint $table) {
+            $table->id();
             $table->string('slider_name', 255)->nullable();
             $table->string('slider_image', 255)->nullable();
             $table->string('slider_url')->nullable();
-            $table->string('slider_status', 255)->nullable();
+            $table->string('slider_status');
             $table->timestamps();
         });
     }

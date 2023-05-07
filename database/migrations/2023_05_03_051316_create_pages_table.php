@@ -25,11 +25,12 @@ class CreatePagesTable extends Migration
     public function up()
     {
         Schema::create('pages', static function (Blueprint $table) {
+            $table->id();
             $table->string('page_name', 255)->nullable();
             $table->text('page_description')->nullable();
             $table->string('page_tags')->nullable();
             $table->longText('page_content', 255)->nullable();
-            $table->string('page_status', 255)->nullable();
+            $table->string('page_status');
             $table->timestamps();
         });
     }

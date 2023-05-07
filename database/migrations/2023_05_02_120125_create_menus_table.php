@@ -25,11 +25,12 @@ class CreateMenusTable extends Migration
     public function up()
     {
         Schema::create('menus', static function (Blueprint $table) {
+            $table->id();
             $table->string('menu_name', 255)->nullable();
-            $table->integer('page_id');
+            $table->integer('page_id')->nullable();
             $table->string('menu_slug', 255)->nullable();
             $table->integer('up_menu');
-            $table->string('menu_status', 255)->nullable();
+            $table->string('menu_status');
             $table->timestamps();
         });
     }

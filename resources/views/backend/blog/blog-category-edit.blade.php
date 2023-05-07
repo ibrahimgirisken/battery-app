@@ -54,7 +54,7 @@
 </div>
 @endsection
 
-@section('js')
+@section("js")
 <script src="/backend/plugins/select2/js/select2.full.min.js"></script>
 
 <script>
@@ -76,7 +76,7 @@
 <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 @endsection
 
-@section('css')
+@section("css")
 <link rel="stylesheet" href="/backend/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 <link rel="stylesheet" href="/backend/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 @endsection

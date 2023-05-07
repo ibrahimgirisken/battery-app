@@ -6,10 +6,10 @@
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('/frontend/assets/img/breadcrumbs-bg.jpg');">
       <div class="container position-relative d-flex flex-column align-items-center aos-init aos-animate" data-aos="fade">
 
-        <h2>Contact</h2>
+        <h2>@lang('main-page.contact')</h2>
         <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Contact</li>
+          <li><a href="/">@lang('main-page.home')</a></li>
+          <li>@lang('main-page.contact')</li>
         </ol>
 
       </div>
@@ -49,7 +49,7 @@
         <div class="row gy-4 mt-1">
 
           <div class="col-lg-6 ">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen=""></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12731.679462126318!2d30.619869994751!3d37.083215417303585!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c389fb8e96d627%3A0x6d78aec2e3173b70!2zQ1cgRU5FUkrEsCBNw5xILiBUxLBDLiBWRSBTQU4uIEEuxZ4u!5e0!3m2!1str!2str!4v1683452848601!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div><!-- End Google Maps -->
 
           <div class="col-lg-6">

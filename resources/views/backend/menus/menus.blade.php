@@ -62,7 +62,7 @@
 </div>
 @endsection
 
-@section('js')
+@section("js")
 <script>
     $(function () {
 
@@ -99,6 +99,6 @@
 </script>
 @endsection
 
-@section('css')
+@section("css")
 
 @endsection

@@ -34,7 +34,7 @@ class CreateBlogsTable extends Migration
             $table->integer('blog_author');
             $table->string('blog_slug', 255);
             $table->integer('blog_categoryId');
-            $table->string('blog_status', 255)->nullable();
+            $table->string('blog_status');
             $table->timestamps();
         });
     }

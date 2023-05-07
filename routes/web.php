@@ -46,8 +46,10 @@ Route::prefix("admin")->group(function(){
     Route::get('/slider-edit',[SlidersController::class,'sliderEdit'])->name('selider-edit');
    
     Route::get('/menus',[MenusController::class,'getMenus'])->name('menus');
-    Route::get('/menu-add',[MenusController::class,'menuAdd'])->name('menu-add');
-    Route::get('/menu-edit',[MenusController::class,'menuEdit'])->name('menu-edit');
+    Route::get('/menu-add',[MenusController::class,'getMenuAdd'])->name('menu-add');
+    Route::get('/menu-edit',[MenusController::class,'getMenuEdit'])->name('menu-edit');
+    Route::post('/menu-add',[MenusController::class,'postMenuAdd'])->name('menu-add');
+    Route::post('/menu-edit',[MenusController::class,'postMenuEdit'])->name('menu-edit');
     
     Route::get('/users',[UsersController::class,'getUsers'])->name('users');
     Route::get('/user-add',[UsersController::class,'userAdd'])->name('user-add');
