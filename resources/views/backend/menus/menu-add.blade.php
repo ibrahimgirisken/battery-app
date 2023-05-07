@@ -32,13 +32,23 @@
                                     <label>Menüler</label>
                                     <select name="up_menu" class="form-control select2" style="width: 100%;">
                                         <option value="0" selected="selected">Üst Menü</option>
-                                        <option value="1">Alaska</option>
-                                        <option value="2">California</option>
+                                        @foreach ($menus as $menu )
+                                        <option value="{{$menu->id}}">{{$menu->menu_name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Menü Adı</label>
                                     <input name="menu_name" type="text" class="form-control" placeholder="Menü Adı Yazınız">
+                                </div>
+                                <div class="form-group">
+                                    <label>Sayfa Seç</label>
+                                    <select name="page_id" class="form-control select2" style="width: 100%;">
+                                        <option value="0" selected="selected">Sayfa Seç</option>
+                                        @foreach ($pages as $page )
+                                        <option value="{{$page->id}}">{{$page->page_name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Menü Görünürlüğü</label><br>

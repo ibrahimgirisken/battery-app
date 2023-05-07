@@ -30,6 +30,7 @@ class CreateMenusTable extends Migration
             $table->integer('page_id')->nullable();
             $table->string('menu_slug', 255)->nullable();
             $table->integer('up_menu');
+            $table->integer('list')->nullable();
             $table->string('menu_status');
             $table->timestamps();
         });

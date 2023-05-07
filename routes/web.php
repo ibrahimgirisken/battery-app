@@ -47,9 +47,10 @@ Route::prefix("admin")->group(function(){
    
     Route::get('/menus',[MenusController::class,'getMenus'])->name('menus');
     Route::get('/menu-add',[MenusController::class,'getMenuAdd'])->name('menu-add');
-    Route::get('/menu-edit',[MenusController::class,'getMenuEdit'])->name('menu-edit');
+    Route::get('/menu-edit/{menuId}',[MenusController::class,'getMenuEdit'])->name('menu-edit');
+    Route::post('/menus',[MenusController::class,'postMenus'])->name('menus');
     Route::post('/menu-add',[MenusController::class,'postMenuAdd'])->name('menu-add');
-    Route::post('/menu-edit',[MenusController::class,'postMenuEdit'])->name('menu-edit');
+    Route::post('/menu-edit/{menuId}',[MenusController::class,'postMenuEdit'])->name('menu-edit');
     
     Route::get('/users',[UsersController::class,'getUsers'])->name('users');
     Route::get('/user-add',[UsersController::class,'userAdd'])->name('user-add');

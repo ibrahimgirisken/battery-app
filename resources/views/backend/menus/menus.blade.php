@@ -26,33 +26,39 @@
                 <div class="card-body">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
-                        <tr>
-                            <th>Menü Adı</th>
-                            <th>Oluşturulma Tarihi</th>
-                            <th>İşlemler</th>
-                        </tr>
+                            <tr>
+                                <th>Menü Adı</th>
+                                <th>Sayfa Adı</th>
+                                <th>Oluşturulma Tarihi</th>
+                                <th>İşlemler</th>
+                            </tr>
                         </thead>
                         <tbody id="sortable">
-                        <tr id="item-">
-                            <td class="sortable">Trident</td>
-                            <td>Win 95+</td>
-                            <td>
-                                <a href="page-edit.html" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;Düzenle</a>
-                                <button class="btn btn-danger"><i class="fas fa-trash-alt"></i>&nbsp;Sil</button>
-                                <button class="btn btn-success"><i class="fas fa-eye"></i>&nbsp;Aktif/Pasif</button>
-                            </td>
-                        </tr>
-                        <tr id="item-">
-                            <td class="sortable">merhaba</td>
-                            <td>Win 95+</td>
-                            <td>
-                                <a href="page-edit.html" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;Düzenle</a>
-                                <button class="btn btn-danger"><i class="fas fa-trash-alt"></i>&nbsp;Sil</button>
-                                <button class="btn btn-success"><i class="fas fa-eye"></i>&nbsp;Aktif/Pasif</button>
-                            </td>
-                        </tr>
+                            @foreach ($menus as $menu)
+                            <tr id="item-{{$menu->id}}">
+                                <td class="sortable">{{$menu->menu_name}}</td>
+                                <td>{{$menu->page_id}}</td>
+                                <td>{{$menu->created_at}}</td>
+                                <td>
+                                    <a href="{{route('menu-edit',$menu->id)}}" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;Düzenle</a>
+                                    <button class="btn btn-danger"><i class="fas fa-trash-alt"></i>&nbsp;Sil</button>
+                                    <button class="btn btn-success"><i class="fas fa-eye"></i>&nbsp;Aktif/Pasif</button>
+                                </td>
+                            </tr>
+                            @endforeach
+                            @foreach ($menu->children as $downMenu)
+                            <tr id="item-{{$menu->id}}">
+                                <td class="sortable">{{$menu->menu_name}} -> {{$downMenu->menu_name}}</td>
+                                <td>{{$downMenu->page_id}}</td>
+                                <td>{{$downMenu->created_at}}</td>
+                                <td>
+                                    <a href="{{route('menu-edit',$downMenu->id)}}" class="btn btn-primary"><i class="fas fa-edit"></i>&nbsp;Düzenle</a>
+                                    <button class="btn btn-danger"><i class="fas fa-trash-alt"></i>&nbsp;Sil</button>
+                                    <button class="btn btn-success"><i class="fas fa-eye"></i>&nbsp;Aktif/Pasif</button>
+                                </td>
+                            </tr>
+                            @endforeach
                         </tbody>
-
                     </table>
                 </div>
                 <!-- /.card-body -->
@@ -64,7 +70,7 @@
 
 @section("js")
 <script>
-    $(function () {
+    $(function() {
 
         $.ajaxSetup({
             headers: {
@@ -75,19 +81,21 @@
         $('#sortable').sortable({
             revert: true,
             handle: ".sortable",
-            stop: function (event, ui) {
+            stop: function(event, ui) {
                 var data = $(this).sortable('serialize');
                 $.ajax({
                     type: "POST",
                     data: data,
-                    url: "/index.html",
-                    success: function (msg) {
-                        // console.log(msg);
-                        if (msg) {
-                            console.log("başarılı")
+                    url: "{{route('menus')}}",
+                    success: function(response) {
+                        if (response.status == "success") {
+                            toastr.success(response.content, response.title);
                         } else {
-                            console.log("İşlem Başarısız");
+                            toastr.error(response.content, response.title);
                         }
+                    },
+                    error: function(request, status, error) {
+                        console.log(request.responseText);
                     }
                 });
 
